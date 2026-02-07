@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@theme {
+  /* Primary Colors */
+  --color-deep-ocean: #0B2C5F;
+  --color-apcs-blue: #1E5AA8;
+  --color-digital-cyan: #00B4D8;
+
+  /* Secondary Colors */
+  --color-light-blue: #E6F1FB;
+  --color-steel-gray: #6B7280;
+
+  /* Status Colors */
+  --color-status-success: #16A34A;
+  --color-status-warning: #F59E0B;
+  --color-status-error: #DC2626;
+  --color-status-info: #2563EB;
+
+  /* Font Family */
+  --font-sans: 'Inter', 'Roboto', 'Poppins', sans-serif;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: #f9fafb;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    background-color: var(--color-apcs-blue);
+    color: white;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s;
+  }
+
+  .btn-primary:hover {
+    background-color: #1d4ed8;
+  }
+
+  .btn-secondary {
+    background-color: #e5e7eb;
+    color: #1f2937;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s;
+  }
+
+  .btn-secondary:hover {
+    background-color: #d1d5db;
+  }
+
+  .card {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    padding: 1.5rem;
+  }
+
+  .input-field {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    outline: none;
+  }
+
+  .input-field:focus {
+    border-color: var(--color-apcs-blue);
+    box-shadow: 0 0 0 2px rgba(30, 90, 168, 0.2);
+  }
+
+  .table-header {
+    background-color: var(--color-light-blue);
+    color: var(--color-deep-ocean);
+    font-weight: 600;
+    padding: 0.75rem 1rem;
+    text-align: left;
+  }
+
+  .table-cell {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-block;
+  }
+
+  .sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    color: white;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s;
+    cursor: pointer;
+  }
+
+  .sidebar-link:hover {
+    background-color: var(--color-apcs-blue);
+  }
+
+  .sidebar-link-active {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background-color: var(--color-digital-cyan);
+    color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+}
