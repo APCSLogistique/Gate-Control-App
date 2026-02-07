@@ -177,7 +177,7 @@ Git
 ```bash
 git clone https://github.com/APCSLogistique/Frontend.git frontend
 git clone https://github.com/APCSLogistique/Backend.git backend
-git clone https://github.com/APCSLogistique/AI-Service.git ai-service
+git clone https://github.com/APCSLogistique/Ai-Agent-Service.git ai-service
 ```
 
 **2. Setup Backend**
