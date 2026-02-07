@@ -1,4 +1,3 @@
-from pprint import pprint
 from google import genai
 from google.genai import types
 from typing import List, Dict, Any
@@ -37,7 +36,6 @@ class GeminiAgent(AgentInterface):
     ) -> str:
         """Generate response using Gemini with native function calling"""
         try:
-            print("Got into generate success")
 
             contents = self._build_chat_history(
                 chat_history=chat_history, user_id=user_id
@@ -45,8 +43,6 @@ class GeminiAgent(AgentInterface):
             contents.append(
                 types.Content(role="user", parts=[types.Part(text=message)])
             )
-
-            print("Built History")
 
             max_iterations = 1
             for i in range(max_iterations):
@@ -66,12 +62,9 @@ class GeminiAgent(AgentInterface):
 
                 if not function_calls:
                     # No function calls? We have the final text response.
-                    print("Got final text response", flush=True)
-                    print(f"[RESPONSE] {response.text}")
                     return response.text
 
                 # 3. Handle Function Calls
-                print(f"Model requested {len(function_calls)} tool(s)", flush=True)
                 tool_responses = []
 
                 for fc in function_calls:
@@ -89,13 +82,10 @@ class GeminiAgent(AgentInterface):
 
                 # Send function results back in the next loop iteration
                 contents.append(types.Content(role="user", parts=tool_responses))
-                print(f"Sent tool results back to model (Iteration {i+1})", flush=True)
 
             return "I'm sorry, I reached my maximum reasoning limit for this request."
 
         except Exception as e:
-            print("Generate ERROR")
-            pprint(str(e))
             raise Exception(f"Error whilst generating the response {str(e)}")
 
     def _build_chat_history(

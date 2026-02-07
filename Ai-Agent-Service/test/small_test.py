@@ -29,11 +29,11 @@ def check_services():
         response = requests.get("http://localhost:8001/", timeout=5)
         assert response.status_code == 200, "AI Agent Service not running"
 
-        print("\n✅ Both services are running")
+        print("\n Both services are running")
         return True
     except Exception as e:
         pytest.fail(
-            f"\n❌ Services not running. Start them with: ./start_with_mock.sh\nError: {e}"
+            f"\n Services not running. Start them with: ./start_with_mock.sh\nError: {e}"
         )
 
 

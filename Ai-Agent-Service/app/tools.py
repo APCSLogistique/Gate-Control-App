@@ -18,7 +18,6 @@ headers = {
 async def get_chat_messages(chat_id: str) -> List[ChatMessage]:
     """Get messages from a chat"""
     async with httpx.AsyncClient() as client:
-        print(f"{base_url}/api/chat/{chat_id}/messages")
         response = await client.get(
             f"{base_url}/api/chat/{chat_id}/messages", headers=headers
         )

@@ -29,11 +29,11 @@ def check_services():
         response = requests.get("http://localhost:8001/", timeout=5)
         assert response.status_code == 200, "AI Agent Service not running"
 
-        print("\n✅ Both services are running")
+        print("\n Both services are running")
         return True
     except Exception as e:
         pytest.fail(
-            f"\n❌ Services not running. Start them with: ./start_with_mock.sh\nError: {e}"
+            f"\nServices not running. Start them with: ./start_with_mock.sh\nError: {e}"
         )
 
 
@@ -265,7 +265,7 @@ class TestPerformance:
         assert "message" in result
         # Should complete in under 30 seconds (generous timeout)
         assert elapsed < 30
-        print(f"\n⏱️  Query took {elapsed:.2f}s")
+        print(f"\n️  Query took {elapsed:.2f}s")
 
     @pytest.mark.slow
     def test_complex_query_performance(self, ai_client):
@@ -277,7 +277,7 @@ class TestPerformance:
         assert "message" in result
         # Complex queries may take longer but should still complete
         assert elapsed < 45
-        print(f"\n⏱️  Complex query took {elapsed:.2f}s")
+        print(f"\n️ Complex query took {elapsed:.2f}s")
 
 
 class TestChatHistory:

@@ -7,7 +7,7 @@
  * - POST /login → UserController::login
  */
 
-import api from './api.routes';
+import api from "./api.routes";
 
 export const authRoutes = {
   /**
@@ -24,7 +24,7 @@ export const authRoutes = {
    * @returns {Promise<Object>} { message, user }
    */
   register(userData) {
-    return api.post('/register', userData);
+    return api.post("/register", userData);
   },
 
   /**
@@ -38,7 +38,7 @@ export const authRoutes = {
    * @returns {Promise<Object>} { message, user, token }
    */
   login(email, password) {
-    return api.post('/login', { email, password });
+    return api.post("/login", { email, password });
   },
 
   /**
@@ -50,7 +50,7 @@ export const authRoutes = {
    * @returns {Promise<void>}
    */
   logout() {
-    return api.post('/logout');
+    return api.post("/logout");
   },
 };
 

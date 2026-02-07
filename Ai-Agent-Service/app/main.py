@@ -50,16 +50,12 @@ async def generate(
     try:
         # Get chat history
         chat_history: List[ChatMessage] = []
-        print("Agent: ", agent)
-        print("Chat ID: ", request.chat_id)
-        print("Message: ", request.message)
         try:
             chat_history = await get_chat_messages(request.chat_id)
         except Exception as e:
             # If we can't get history, continue with empty history
             print(f"Warning: Could not fetch chat history: {e}")
 
-        print("We got here yak")
         # Generate response
         response_message = await agent.generate(
             message=request.message,
