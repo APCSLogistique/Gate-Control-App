@@ -221,11 +221,11 @@ npm run dev
 
 ### Access Points
 
-| Service         | URL                       |
-| --------------- | ------------------------- |
-| **Frontend**    | http://localhost:5173     |
-| **Backend API** | http://localhost:8080/api |
-| **AI Service**  | http://localhost:8001     |
+| Service         | URL                            |
+| --------------- | ------------------------------ |
+| **Frontend**    | http://localhost:5173          |
+| **Backend API** | http://localhost:8080/docs/api |
+| **AI Service**  | http://localhost:8001          |
 
 ---
 
