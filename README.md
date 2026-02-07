@@ -221,11 +221,11 @@ npm run dev
 
 ### Access Points
 
-| Service         | URL                       | Demo Login                                                 |
-| --------------- | ------------------------- | ---------------------------------------------------------- |
-| **Frontend**    | http://localhost:5173     | admin@gmail.com (password you do it using db:init command) |
-| **Backend API** | http://localhost:8080/api | -                                                          |
-| **AI Service**  | http://localhost:8001     | -                                                          |
+| Service         | URL                       |
+| --------------- | ------------------------- |
+| **Frontend**    | http://localhost:5173     |
+| **Backend API** | http://localhost:8080/api |
+| **AI Service**  | http://localhost:8001     |
 
 ---
 
