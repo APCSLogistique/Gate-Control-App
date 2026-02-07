@@ -35,6 +35,23 @@ services:
       - app
     restart: unless-stopped
 
+  ai:
+    build:
+      context: ./Ai-Agent-Service
+      dockerfile: Dockerfile
+    container_name: apcs_ai
+    image: apcs_ai
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./Ai-Agent-Service:/app
+    networks:
+      - app
+    restart: unless-stopped
+    depends_on:
+      - backend
+      - db
+
   db:
     image: mysql:8.4
     container_name: apcs_db

@@ -1,0 +1,11 @@
+
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.env
+.git
+.gitignore
+pytest.ini
+uv.lock
+.python-version
