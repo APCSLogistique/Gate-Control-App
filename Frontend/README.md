@@ -38,11 +38,11 @@ APCS (Algerian Port Community System) is a comprehensive frontend application de
 
 The application includes built-in demo accounts that work without a backend connection:
 
-| Role | Email | Password | Access Level |
-|------|-------|----------|--------------|
-| **Admin** | `admin@apcs.dz` | `admin123` | Full system access |
-| **Operator** | `operator@apcs.dz` | `operator123` | Gate operations |
-| **Carrier** | `carrier@apcs.dz` | `carrier123` | Booking management |
+| Role         | Email              | Password      | Access Level       |
+| ------------ | ------------------ | ------------- | ------------------ |
+| **Admin**    | `admin@apcs.dz`    | `admin123`    | Full system access |
+| **Operator** | `operator@apcs.dz` | `operator123` | Gate operations    |
+| **Carrier**  | `carrier@apcs.dz`  | `carrier123`  | Booking management |
 
 > **Note**: Demo accounts authenticate locally without API calls, perfect for testing and demonstrations.
 
@@ -51,6 +51,7 @@ The application includes built-in demo accounts that work without a backend conn
 ## Features
 
 ### Admin Dashboard
+
 - **Dashboard** - Real-time KPIs (Total Bookings, Available Slots, Port Saturation)
 - **Capacity Management** - Configure daily capacity limits and time slots
 - **Booking Requests** - Review and approve/reject booking requests from carriers
@@ -61,17 +62,20 @@ The application includes built-in demo accounts that work without a backend conn
 - **Logs** - System activity logs
 
 ### Operator Dashboard
+
 - **Dashboard** - Operational overview
 - **Bookings** - View assigned bookings
 - **QR Scanner** - Scan QR codes for truck entry validation
 
 ### Carrier Dashboard
+
 - **Dashboard** - Personal booking overview
 - **New Booking** - Create new port entry bookings
 - **My Bookings** - View and manage personal bookings
 - **History** - View booking history
 
 ### Shared Features
+
 - **AI Assistant** - Natural language query support
 - **Notifications** - Real-time alerts and updates
 - **Profile** - Personal information management
@@ -81,14 +85,14 @@ The application includes built-in demo accounts that work without a backend conn
 
 ## Tech Stack
 
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| **React** | 19.2.0 | UI Framework |
-| **Vite** | 7.3.1 | Build Tool & Dev Server |
-| **React Router** | 7.13.0 | Client-side Routing |
-| **TailwindCSS** | 4.1.18 | Utility-first CSS |
-| **Recharts** | 3.7.0 | Data Visualization |
-| **Lucide React** | 0.563.0 | Icon Library |
+| Technology       | Version | Purpose                 |
+| ---------------- | ------- | ----------------------- |
+| **React**        | 19.2.0  | UI Framework            |
+| **Vite**         | 7.3.1   | Build Tool & Dev Server |
+| **React Router** | 7.13.0  | Client-side Routing     |
+| **TailwindCSS**  | 4.1.18  | Utility-first CSS       |
+| **Recharts**     | 3.7.0   | Data Visualization      |
+| **Lucide React** | 0.563.0 | Icon Library            |
 
 ---
 
@@ -191,18 +195,18 @@ src/
 
 ## Role Permissions
 
-| Feature | Admin | Operator | Carrier |
-|---------|:-----:|:--------:|:-------:|
-| Dashboard | Full | Limited | Personal |
-| Booking Requests | Approve/Reject | - | - |
-| Create Booking | - | - | Yes |
-| View All Bookings | Yes | Yes | - |
-| View Own Bookings | Yes | - | Yes |
-| QR Scanner | Yes | Yes | - |
-| Capacity Management | Yes | - | - |
-| User Management | Yes | - | - |
-| Reports | Yes | - | - |
-| AI Assistant | Yes | Yes | Yes |
+| Feature             |     Admin      | Operator | Carrier  |
+| ------------------- | :------------: | :------: | :------: |
+| Dashboard           |      Full      | Limited  | Personal |
+| Booking Requests    | Approve/Reject |    -     |    -     |
+| Create Booking      |       -        |    -     |   Yes    |
+| View All Bookings   |      Yes       |   Yes    |    -     |
+| View Own Bookings   |      Yes       |    -     |   Yes    |
+| QR Scanner          |      Yes       |   Yes    |    -     |
+| Capacity Management |      Yes       |    -     |    -     |
+| User Management     |      Yes       |    -     |    -     |
+| Reports             |      Yes       |    -     |    -     |
+| AI Assistant        |      Yes       |   Yes    |   Yes    |
 
 ---
 
@@ -259,7 +263,7 @@ docker-start.bat     # Windows
 ### Docker Compose
 
 ```yaml
-version: '3.8'
+version: "3.8"
 services:
   frontend:
     build: .
@@ -274,20 +278,25 @@ services:
 ## Key Components
 
 ### BookingContext
+
 Global state management for bookings with real-time status updates:
+
 - `bookings` - List of all bookings
 - `updateBookingStatus(id, status)` - Update booking status
 - `getBookingsByStatus(status)` - Filter bookings by status
 - `pendingCount`, `confirmedCount`, `rejectedCount` - Status counts
 
 ### AuthContext
+
 Authentication state with demo account support:
+
 - `user` - Current user data
 - `login(email, password)` - Authenticate user
 - `logout()` - End session
 - `isAdmin`, `isOperator`, `isCarrier` - Role checks
 
 ### ProtectedRoute
+
 Route guard component for role-based access control.
 
 ---
